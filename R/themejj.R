@@ -88,7 +88,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     panel.grid.major =      element_blank(),
     panel.grid.minor =      element_blank(),
     panel.spacing =         unit(0.3, "lines"),
-    panel.ontop =           TRUE,
+    panel.ontop =           FALSE,
 
     strip.background =      element_rect(fill = NA, colour = NA),
     strip.text =            element_text(size = rel(.8)),
