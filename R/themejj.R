@@ -57,7 +57,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 hjust = 1,
                                 margin = margin(0,0,0,5)),
     axis.ticks =            element_line(),
-    axis.ticks.length =     unit(-.15, "lines"),
+    axis.ticks.length =     unit(-.3, "lines"),
     axis.title =            element_text(size = rel(0.8)),
     axis.title.x =          element_text(
                                 margin = margin(5,0,0,0)),
