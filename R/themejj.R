@@ -43,21 +43,21 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     axis.text.x =           element_text(
                                 vjust = .5,
                                 hjust = .5,
-                                margin = margin(5,0,0,0)),
+                                margin = margin(6,0,0,0)),
     axis.text.x.top =       element_text(
                                 vjust = .5,
                                 hjust = .5,
-                                margin = margin(0,0,5,0)),
+                                margin = margin(0,0,6,0)),
     axis.text.y =           element_text(
                                 vjust = .45,
                                 hjust = 1,
-                                margin = margin(0,5,0,0)),
+                                margin = margin(0,6,0,0)),
     axis.text.y.right =     element_text(
                                 vjust = .45,
                                 hjust = 1,
-                                margin = margin(0,0,0,5)),
+                                margin = margin(0,0,0,6)),
     axis.ticks =            element_line(),
-    axis.ticks.length =     unit(-.5, "lines"),
+    axis.ticks.length =     unit(-.4, "lines"),
     axis.title =            element_text(size = rel(0.8)),
     axis.title.x =          element_text(
                                 margin = margin(5,0,0,0)),
