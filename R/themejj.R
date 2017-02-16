@@ -75,12 +75,12 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     
 
     legend.background =     element_rect(
-                                color=NA,
-                                fill = alpha("white",.9)),
+                                color = NA,
+                                fill = NA),
     legend.margin =         margin(1,1,1,1, "pt"),
     legend.key =            element_rect(
                                 fill = NA,
-                                color = "white",
+                                color = NA,
                                 size = 5),
     legend.key.size =       unit(.7, "line"),
     legend.key.height =     unit(.7, "line"),
