@@ -44,19 +44,36 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 vjust = .5,
                                 hjust = .5,
                                 margin = margin(2,0,0,0)),
+    axis.text.x.top =       element_text(
+                                vjust = .5,
+                                hjust = .5,
+                                margin = margin(2,0,0,0)),
     axis.text.y =           element_text(
                                 vjust = .45,
                                 hjust = 1,
                                 margin = margin(0,2,0,0)),
+    axis.text.y.right =     element_text(
+                                vjust = .45,
+                                hjust = 1,
+                                margin = margin(0,2,0,0)),
     axis.ticks =            element_line(),
-    axis.ticks.length =     unit(.15, "lines"),
+    axis.ticks.length =     unit(-.15, "lines"),
+    axis.ticks.margin =     unit(0.25, "cm"),
     axis.title =            element_text(size = rel(0.8)),
     axis.title.x =          element_text(
                                 margin = margin(5,0,0,0)),
+    axis.title.x.top =      element_text(
+                                margin = margin(5,0,0,0)),,
     axis.title.y =          element_text(
                                 angle = 90,
                                 vjust = 0,
                                 margin=margin(0,10,0,0)),
+     axis.title.y.right =    element_text(
+                                angle = 90,
+                                vjust = 0,
+                                margin=margin(0,10,0,0)),,
+    
+    
 
     legend.background =     element_rect(
                                 color=NA,
@@ -81,6 +98,10 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     legend.box =            NULL,
     legend.box.margin =     margin(.2,.2,.2,.2, "lines"),
     legend.box.spacing =    unit(.2, "lines"),
+    legend.spacing =        unit(.2, "lines"),
+    legend.spacing.x =      unit(.2, "lines"),
+    legend.spacing.y =      unit(.2, "lines"),
+    legend.box.background = element_rect(fill = NA, colour = NA),
 
     panel.background =      element_rect(fill = NA, colour = NA),
     panel.border =          element_rect(fill = NA,
@@ -89,6 +110,8 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     panel.grid.minor =      element_blank(),
     panel.spacing =         unit(0.3, "lines"),
     panel.ontop =           FALSE,
+    panel.spacing.x =       unit(.2, "lines"),
+    panel.spacing.y =       unit(.2, "lines"),
 
     strip.background =      element_rect(fill = NA, colour = NA),
     strip.text =            element_text(size = rel(.8)),
@@ -101,6 +124,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 margin = margin(.2,.2,1,.2,"lines")),
     strip.switch.pad.grid = unit(0.15, "lines"),
     strip.switch.pad.wrap = unit(0.15, "lines"),
+    strip.placement = "top",
 
     plot.background =       element_rect(colour="white", fill="white"),
     plot.title =            element_text(
@@ -109,9 +133,10 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 lineheight =.9,
                                 margin = margin(0,0,0,10, "pt")),
     plot.margin =          unit(c(1, 0.3, 0.3, 0.3), "lines"),
+    plot.subtitle = NULL,
+    plot.caption = NULL,
    
     aspect.ratio =         NULL, #1/1.618,
-
     complete =             TRUE
   )
 }
