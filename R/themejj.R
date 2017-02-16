@@ -58,7 +58,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 margin = margin(0,2,0,0)),
     axis.ticks =            element_line(),
     axis.ticks.length =     unit(-.15, "lines"),
-    axis.ticks.margin =     unit(0.25, "cm"),
+    axis.ticks.margin =     unit(0.5, "lines"),
     axis.title =            element_text(size = rel(0.8)),
     axis.title.x =          element_text(
                                 margin = margin(5,0,0,0)),
@@ -68,7 +68,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 angle = 90,
                                 vjust = 0,
                                 margin=margin(0,10,0,0)),
-     axis.title.y.right =    element_text(
+    axis.title.y.right =    element_text(
                                 angle = 90,
                                 vjust = 0,
                                 margin=margin(0,10,0,0)),,
