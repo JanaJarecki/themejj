@@ -14,7 +14,7 @@ if(!any(grepl("Roboto", fonts())))
     font_import(pattern="Roboto")
     loadfonts()
 }
-require(ggplot2)
+
 
 themejj <-
 function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
@@ -46,32 +46,48 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     axis.line =             element_line(color = "black"),
     axis.line.x =           element_line(color = "black"),
     axis.line.y =           element_line(color = "black"),
-    axis.text =             element_text(size = rel(0.6)),
+    axis.text =             element_text(size = rel(0.8)),
     axis.text.x =           element_text(
                                 vjust = .5,
                                 hjust = .5,
-                                margin = margin(2,0,0,0)),
+                                margin = margin(7,0,0,0)),
+    axis.text.x.top =       element_text(
+                                vjust = .5,
+                                hjust = .5,
+                                margin = margin(0,0,7,0)),
     axis.text.y =           element_text(
                                 vjust = .45,
                                 hjust = 1,
-                                margin = margin(0,2,0,0)),
+                                margin = margin(0,7,0,0)),
+    axis.text.y.right =     element_text(
+                                vjust = .45,
+                                hjust = 1,
+                                margin = margin(0,0,0,7)),
     axis.ticks =            element_line(),
-    axis.ticks.length =     unit(.15, "lines"),
+    axis.ticks.length =     unit(-.20, "lines"),
     axis.title =            element_text(size = rel(0.8)),
     axis.title.x =          element_text(
                                 margin = margin(5,0,0,0)),
+    axis.title.x.top =      element_text(
+                                margin = margin(5,0,0,0)),,
     axis.title.y =          element_text(
                                 angle = 90,
                                 vjust = 0,
                                 margin=margin(0,10,0,0)),
+    axis.title.y.right =    element_text(
+                                angle = 90,
+                                vjust = 0,
+                                margin=margin(0,10,0,0)),,
+    
+    
 
     legend.background =     element_rect(
-                                color=NA,
-                                fill = alpha("white",.9)),
+                                color = NA,
+                                fill = NA),
     legend.margin =         margin(1,1,1,1, "pt"),
     legend.key =            element_rect(
                                 fill = NA,
-                                color = "white",
+                                color = NA,
                                 size = 5),
     legend.key.size =       unit(.7, "line"),
     legend.key.height =     unit(.7, "line"),
@@ -88,6 +104,10 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     legend.box =            NULL,
     legend.box.margin =     margin(.2,.2,.2,.2, "lines"),
     legend.box.spacing =    unit(.2, "lines"),
+    legend.spacing =        unit(.2, "lines"),
+    legend.spacing.x =      unit(.2, "lines"),
+    legend.spacing.y =      unit(.2, "lines"),
+    legend.box.background = element_rect(fill = NA, colour = NA),
 
     panel.background =      element_rect(fill = NA, colour = NA),
     panel.border =          element_rect(fill = NA,
@@ -95,7 +115,9 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
     panel.grid.major =      element_blank(),
     panel.grid.minor =      element_blank(),
     panel.spacing =         unit(0.3, "lines"),
-    panel.ontop =           TRUE,
+    panel.ontop =           FALSE,
+    panel.spacing.x =       unit(.2, "lines"),
+    panel.spacing.y =       unit(.2, "lines"),
 
     strip.background =      element_rect(fill = NA, colour = NA),
     strip.text =            element_text(size = rel(.8)),
@@ -108,6 +130,7 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 margin = margin(.2,.2,1,.2,"lines")),
     strip.switch.pad.grid = unit(0.15, "lines"),
     strip.switch.pad.wrap = unit(0.15, "lines"),
+    strip.placement = "top",
 
     plot.background =       element_rect(colour="white", fill="white"),
     plot.title =            element_text(
@@ -116,9 +139,10 @@ function(base_size = 12, base_family = "Roboto Light", facet = FALSE)
                                 lineheight =.9,
                                 margin = margin(0,0,0,10, "pt")),
     plot.margin =          unit(c(1, 0.3, 0.3, 0.3), "lines"),
+    plot.subtitle = NULL,
+    plot.caption = NULL,
    
     aspect.ratio =         NULL, #1/1.618,
-
     complete =             TRUE
   )
 }
