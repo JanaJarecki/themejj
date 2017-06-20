@@ -9,7 +9,6 @@
 #' @examples
 #' themejj()
 
-require(extrafont)
 if(!any(grepl("Roboto", fonts())))
 {
     font_import(pattern="Roboto")
