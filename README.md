@@ -10,7 +10,7 @@ install_github("janajarecki/ggsavejj", force=TRUE)
 # install.packages(ggplot)
 ```
 # How plots look like
-![Boxplot](/imag/boxplot.png)
+![Boxplot](/img/boxplot.png)
 Format: ![Boxplot](url)
 
 # Usage
