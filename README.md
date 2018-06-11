@@ -10,7 +10,7 @@ install_github("janajarecki/ggsavejj", force=TRUE)
 # install.packages(ggplot)
 ```
 # How plots look like
-<img src="/img/boxplot.png" width="300px" alt="Boxplot">
+<img src="/img/boxplot.png" height="300px" alt="Boxplot"> <img src="/img/scatterplot.png" height="300px" alt="Scatterplot">
 
 
 # Usage
