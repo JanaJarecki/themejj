@@ -3,8 +3,8 @@ Type: Package
 Title: Custom theme for ggplot2 graphics
 Version: 1.01
 Date: 2016-07-19
-Author: Jana Jarecki
-Maintainer: Jana Jarecki <jarecki.jana@gmail.com>
+Author: Jana B. Jarecki
+Maintainer: Jana B. Jarecki <jarecki.jana@gmail.com>
 Description: Styles graphics in a simplistic way
 Depends: extrafont, ggplot2
 License: GNU
