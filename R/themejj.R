@@ -57,7 +57,7 @@ themejj <- function(base_size = 12, base_family = "Roboto Light", base_line_size
     axis.line.x =           NULL,
     axis.line.y =           NULL,
     axis.text =             element_text(
-                                size = rel(0.7),
+                                size = rel(0.8),
                                 color = 'black',
                                 margin = margin(b = half_line)),
     axis.text.x =           element_text(
@@ -102,7 +102,7 @@ themejj <- function(base_size = 12, base_family = "Roboto Light", base_line_size
     legend.key.size =       unit(0.8, 'lines'),
     legend.key.height =     NULL,
     legend.key.width =      NULL,
-    legend.text =           element_text(size = rel(0.6)),
+    legend.text =           element_text(size = rel(0.8)),
     legend.text.align =     NULL,
     legend.title =          element_text(size = rel(0.8), hjust = 0),
     legend.title.align =    NULL,
