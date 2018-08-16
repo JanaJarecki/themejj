@@ -28,8 +28,6 @@ g + geom_dotplot(binaxis='y',
        x="Class of Vehicle",
        y="City Mileage")
 
-  ggsave('../img/boxplot.png')
-
 
 
 # ------------------------------
@@ -50,4 +48,3 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
   facet_wrap(~state)
 
 plot(gg)
-ggsave('../img/scatterplot.png', width = 8)
