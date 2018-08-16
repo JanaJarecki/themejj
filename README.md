@@ -4,7 +4,7 @@ ggplot2 theme for publication-ready graphics
 # Installation
 ```R
 library(devtools) #maybe install.packages('devtools')
-install_github("janajarecki/ggsavejj", force=TRUE)
+install_github("janajarecki/themejj", force=TRUE)
 # You need these two packages
 # install.packages(extrafont)
 # install.packages(ggplot)
