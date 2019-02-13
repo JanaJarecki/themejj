@@ -17,7 +17,7 @@ if(!any(grepl("Roboto", fonts())))
 }
 require(ggplot2)
 
-themejj <- function(base_size = 12, base_family = "Roboto Light", base_line_size = base_size/30, base_rect_size = base_size/30, facet = FALSE)
+themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_size = base_size/30, base_rect_size = base_size/30, facet = FALSE)
 {
     half_line <- base_size/2
     base_grey_color <- 'grey60'
