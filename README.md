@@ -1,52 +1,36 @@
 # themejj
 ggplot2 theme for publication-ready graphics
 
+# Requirements
+Installation of R and the font "Roboto Condensed", which you get here https://fonts.google.com/specimen/Roboto+Condensed
+
 # Installation
 ```R
 library(devtools) #maybe install.packages('devtools')
 install_github("janajarecki/themejj", force=TRUE)
-# You need these two packages
+# If this throws errors: You need these two packages
 # install.packages(extrafont)
 # install.packages(ggplot)
 ```
 # How plots look like
-<img src="/img/boxplot.png" height="300px" alt="Boxplot"> <img src="/img/scatterplot.png" height="300px" alt="Scatterplot">
+<img src="/img/boxplot.jpg" width="30%" alt="Boxplot"> <img src="/img/lineplot.png" width="30%" alt="Lineplot"> <img src="/img/densityplot.png" width="30%" alt="Densityplot"> <br>
+<img src="/img/scatterplot.jpg" width="60%" alt="Scatterplot">
+
 
 
 # Usage
-Plots the first plot shown above
 ```R
 library(ggplot2)
 library(themejj)
-theme_set(themejj(base_size = 16))
-
-# ----------------
-# The following examples are adapted from
-# http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
-# ----------------
-
-# Boxplot
-# uncomment this to order the x-axis 
-# library(data.table)
-# mpg <- as.data.table(mpg)
-# x.order <- mpg[, median(cty), by = manufacturer][order(V1)]$manufacturer
-
-g <- ggplot(mpg, aes(factor(manufacturer, levels = x.order), cty))
-g + geom_dotplot(binaxis='y', 
-               stackdir='center', 
-               dotsize = .5, 
-               fill="#83AEB2",
-               color="#AEAEB7",
-               alpha = .6) +
-  geom_boxplot(alpha = .1) + 
-  theme(axis.text.x = element_text(angle=90, hjust = 1, vjust = .5)) + 
-  labs(title="Box plot + Dot plot", 
-       subtitle="City Mileage vs Class: Each dot represents 1 row in source data",
-       caption="Source: mpg",
-       x="Class of Vehicle",
-       y="City Mileage")
-
-  ggsave('../img/boxplot.png')
+theme_set(themejj())
+# ggplot(mtcars, aes(mpg, wt)) +
+#   geom_point(size = 2, 
+#              fill="#83AEB2",
+#              color="#AEAEB7",
+#              alpha = .6) +
+#   geom_smooth(method = lm, alpha = .2, color = "black") +
+#   labs(title = 'Line Plot', caption = 'Source: mtcars',
+#        subtitle="Miles Per Gallon and Weight") +
 ```
 
 
