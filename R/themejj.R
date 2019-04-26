@@ -1,13 +1,13 @@
 #' A ggplot theme: simple publication-ready theme
 #' @import extrafont ggplot2 scales
 #' @param base_size The base size of the font; defaults to 10 pt
-#' @param base_family base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{[library(fontextra)]} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.
+#' @param base_family base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{library(fontextra)} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.
 #' @param base_line_size base size for line elements
 #' @param base_rect_size base size for rect elements
 #' @param facet (optional, default is \code{FALSE}). If \code{TRUE} a rectangle around plotting panel is shown, useful if you use facetting (\code{facet_grid(), facet_wrap()}.
 #' @keywords ggplot2, themes, graphics
 #' @author Jana B. Jarecki
-#' @example \donttest{
+#' @examples \donttest{
 #' see here for more https://github.com/JanaJarecki/themejj/wiki
 #' data(mtcars)
 #' ggplot(mtcars, aes(mpg, wt)) +

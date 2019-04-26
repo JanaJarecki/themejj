@@ -2,8 +2,7 @@
 % Please edit documentation in R/themejj.R
 \name{themejj}
 \alias{themejj}
-\title{A ggplot theme
-This function applies a simple publication-ready theme}
+\title{A ggplot theme: simple publication-ready theme}
 \usage{
 themejj(base_size = 10, base_family = "Roboto Condensed",
   base_line_size = base_size/30, base_rect_size = base_size/30,
@@ -12,7 +11,7 @@ themejj(base_size = 10, base_family = "Roboto Condensed",
 \arguments{
 \item{base_size}{The base size of the font; defaults to 10 pt}
 
-\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{[library(fontextra)]} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.}
+\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{library(fontextra)} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.}
 
 \item{base_line_size}{base size for line elements}
 
@@ -21,69 +20,44 @@ themejj(base_size = 10, base_family = "Roboto Condensed",
 \item{facet}{(optional, default is \code{FALSE}). If \code{TRUE} a rectangle around plotting panel is shown, useful if you use facetting (\code{facet_grid(), facet_wrap()}.}
 }
 \description{
-A ggplot theme
-This function applies a simple publication-ready theme
+A ggplot theme: simple publication-ready theme
 }
 \examples{
-#'\donttest{  # Adapted from https://www.datanovia.com/en/blog/ ggplot-examples-best-reference/
-  data(mtcars)
-  ggplot(mtcars, aes(mpg, wt)) +
-    geom_point(size = 2, 
-              fill="#83AEB2",
-              color="#AEAEB7",
-              alpha = .6) +
-    geom_smooth(method = lm, alpha = .2, color = "black") +
-    labs(caption = 'Source: mtcars')
+\donttest{
+see here for more https://github.com/JanaJarecki/themejj/wiki
+data(mtcars)
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point(size = 2, 
+            fill="#83AEB2",
+            color="#AEAEB7",
+            alpha = .6) +
+  geom_smooth(method = lm, alpha = .2, color = "black") +
+  labs(title = 'Line Plot', caption = 'Source: mtcars',
+      subtitle="Miles Per Gallon and Weight")
+# ggsave("../img/lineplot.jpg", w = 100, h = 100, unit = 'mm')
   
-  
-  data(iris)
-  # Change line color by groups
-  ggplot(iris, aes(Sepal.Length, color = Species)) +
-    geom_density() +
-    scale_color_viridis_d() +
-    labs(caption = 'Source: iris')
-  
-  
-  # Adapted from http://r-statistics.co/  Top50-Ggplot2-Visualizations-MasterList-R-Code.html
-  
-  # Boxplot
-  # order the x-axis
-  data(mpg)
-  g <- ggplot(mpg, aes(factor(manufacturer), cty))
-  g + geom_dotplot(binaxis='y', 
-                 stackdir='center', 
-                 dotsize = .5, 
-                 fill="#83AEB2",
-                 color="#AEAEB7",
-                 alpha = .6) +
-    geom_boxplot(alpha = .1) + 
-    theme(axis.text.x = element_text(angle=90, hjust = 1, vjust = .5)) + 
-    labs(title="Box plot + Dot plot", 
-         subtitle="City Mileage vs Class: Each dot represents 1 row in source   data",
-         caption="Source: mpg",
-         x="Class of Vehicle",
-         y="City Mileage")
-  
-  
-  
-  # ------------------------------
-  data("midwest", package = "ggplot2")
-  # midwest <- read.csv("http://goo.gl/G1K41K")  # bkup data source
-  
-  # Scatterplot
-  ggplot(midwest, aes(x=area, y=poptotal)) + 
+data(iris)
+ggplot(iris, aes(Sepal.Length, color = Species)) +
+  geom_density() +
+  scale_color_viridis_d() +
+  labs(caption = 'Source: iris',
+      subtitle="A subtitle")
+data("midwest", package = "ggplot2")
+ggplot(midwest, aes(x=area, y=poptotal)) + 
     geom_point(aes(col=state, size=popdensity), alpha = .3) + 
     geom_smooth(method="loess", se=F, color="black") + 
     xlim(c(0, 0.1)) + 
     ylim(c(0, 500000)) + 
-    labs(subtitle="Area Vs Population", 
+    labs(subtitle="Area versus Population", 
          y="Population", 
          x="Area", 
          title="Scatterplot", 
          caption = "Source: midwest") +
     facet_wrap(~state) +
-    scale_color_viridis_d() 
-#' }
+    scale_color_viridis_d() +
+    themejj(facet = TRUE)
+# see here for more \\link[https://github.com/JanaJarecki/themejj/wiki]
+}
 }
 \author{
 Jana B. Jarecki
