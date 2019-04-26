@@ -1,10 +1,10 @@
 # themejj
 ggplot2 theme for publication-ready graphics
 
-# Requirements
+## Requirements
 Installation of R and the font "Roboto Condensed", which you get here https://fonts.google.com/specimen/Roboto+Condensed
 
-# Installation
+## Installation
 ```R
 library(devtools) #maybe install.packages('devtools')
 install_github("janajarecki/themejj", force=TRUE)
@@ -12,13 +12,13 @@ install_github("janajarecki/themejj", force=TRUE)
 # install.packages(extrafont)
 # install.packages(ggplot)
 ```
-# How plots look like
+## How plots look like
 <img src="/img/boxplot.jpg" width="30%" alt="Boxplot"> <img src="/img/lineplot.png" width="30%" alt="Lineplot"> <img src="/img/densityplot.png" width="30%" alt="Densityplot"> <br>
 <img src="/img/scatterplot.jpg" width="60%" alt="Scatterplot">
 
 
 
-# Usage
+## Usage
 ```R
 library(ggplot2)
 library(themejj)
@@ -33,4 +33,8 @@ theme_set(themejj())
         subtitle="Miles Per Gallon and Weight") +
 ```
 
+## More Info
+See the Wiki.
 
+# Author
+Jana B. Jarecki
