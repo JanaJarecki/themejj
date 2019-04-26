@@ -23,14 +23,14 @@ install_github("janajarecki/themejj", force=TRUE)
 library(ggplot2)
 library(themejj)
 theme_set(themejj())
-# ggplot(mtcars, aes(mpg, wt)) +
-#   geom_point(size = 2, 
-#              fill="#83AEB2",
-#              color="#AEAEB7",
-#              alpha = .6) +
-#   geom_smooth(method = lm, alpha = .2, color = "black") +
-#   labs(title = 'Line Plot', caption = 'Source: mtcars',
-#        subtitle="Miles Per Gallon and Weight") +
+ ggplot(mtcars, aes(mpg, wt)) +
+   geom_point(size = 2, 
+              fill="#83AEB2",
+              color="#AEAEB7",
+              alpha = .6) +
+   geom_smooth(method = lm, alpha = .2, color = "black") +
+   labs(title = 'Line Plot', caption = 'Source: mtcars',
+        subtitle="Miles Per Gallon and Weight") +
 ```
 
 
