@@ -2,24 +2,92 @@
 % Please edit documentation in R/themejj.R
 \name{themejj}
 \alias{themejj}
-\title{A ggplot theme I use for publications}
+\title{A ggplot theme
+This function applies a simple publication-ready theme}
 \usage{
-themejj(base_size = 12, base_family = "Roboto Light", facet = FALSE)
+themejj(base_size = 10, base_family = "Roboto Condensed",
+  base_line_size = base_size/30, base_rect_size = base_size/30,
+  facet = FALSE)
 }
 \arguments{
-\item{base_size}{The base size of the font; defaults to 12 pt}
+\item{base_size}{The base size of the font; defaults to 10 pt}
 
-\item{facet}{Show a rectangle around your plotting panel which can be useful if you have multiple facets,t hat is you us facet_grid(), facet_wrap(); defaults to FALSE (i.e., shows only x and y-axis line)}
+\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{[library(fontextra)]} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.}
 
-\item{base_famile}{The font family; defaults to "Roboto Light". Note: you need to have the Roboto font isntalled and the fontextra package loaded [library(fontextra)] and the font installed [font_import(pattern="Roboto")] and [loadfonts()]}
+\item{base_line_size}{base size for line elements}
+
+\item{base_rect_size}{base size for rect elements}
+
+\item{facet}{(optional, default is \code{FALSE}). If \code{TRUE} a rectangle around plotting panel is shown, useful if you use facetting (\code{facet_grid(), facet_wrap()}.}
 }
 \description{
+A ggplot theme
 This function applies a simple publication-ready theme
 }
 \examples{
-themejj()
+#'\donttest{  # Adapted from https://www.datanovia.com/en/blog/ ggplot-examples-best-reference/
+  data(mtcars)
+  ggplot(mtcars, aes(mpg, wt)) +
+    geom_point(size = 2, 
+              fill="#83AEB2",
+              color="#AEAEB7",
+              alpha = .6) +
+    geom_smooth(method = lm, alpha = .2, color = "black") +
+    labs(caption = 'Source: mtcars')
+  
+  
+  data(iris)
+  # Change line color by groups
+  ggplot(iris, aes(Sepal.Length, color = Species)) +
+    geom_density() +
+    scale_color_viridis_d() +
+    labs(caption = 'Source: iris')
+  
+  
+  # Adapted from http://r-statistics.co/  Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+  
+  # Boxplot
+  # order the x-axis
+  data(mpg)
+  g <- ggplot(mpg, aes(factor(manufacturer), cty))
+  g + geom_dotplot(binaxis='y', 
+                 stackdir='center', 
+                 dotsize = .5, 
+                 fill="#83AEB2",
+                 color="#AEAEB7",
+                 alpha = .6) +
+    geom_boxplot(alpha = .1) + 
+    theme(axis.text.x = element_text(angle=90, hjust = 1, vjust = .5)) + 
+    labs(title="Box plot + Dot plot", 
+         subtitle="City Mileage vs Class: Each dot represents 1 row in source   data",
+         caption="Source: mpg",
+         x="Class of Vehicle",
+         y="City Mileage")
+  
+  
+  
+  # ------------------------------
+  data("midwest", package = "ggplot2")
+  # midwest <- read.csv("http://goo.gl/G1K41K")  # bkup data source
+  
+  # Scatterplot
+  ggplot(midwest, aes(x=area, y=poptotal)) + 
+    geom_point(aes(col=state, size=popdensity), alpha = .3) + 
+    geom_smooth(method="loess", se=F, color="black") + 
+    xlim(c(0, 0.1)) + 
+    ylim(c(0, 500000)) + 
+    labs(subtitle="Area Vs Population", 
+         y="Population", 
+         x="Area", 
+         title="Scatterplot", 
+         caption = "Source: midwest") +
+    facet_wrap(~state) +
+    scale_color_viridis_d() 
+#' }
+}
+\author{
+Jana B. Jarecki
 }
 \keyword{ggplot2,}
 \keyword{graphics}
 \keyword{themes,}
-

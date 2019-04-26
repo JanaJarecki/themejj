@@ -1,28 +1,56 @@
-#' A ggplot theme I use for publications
-#'
-#' This function applies a simple publication-ready theme
-#' @param base_size The base size of the font; defaults to 12 pt
-#' @param base_famile The font family; defaults to "Roboto Light". Note: you need to have the Roboto font isntalled and the fontextra package loaded [library(fontextra)] and the font installed [font_import(pattern="Roboto")] and [loadfonts()]
-#' @param facet Show a rectangle around your plotting panel which can be useful if you have multiple facets,t hat is you us facet_grid(), facet_wrap(); defaults to FALSE (i.e., shows only x and y-axis line)
+#' A ggplot theme: simple publication-ready theme
+#' @import extrafont ggplot2 scales
+#' @param base_size The base size of the font; defaults to 10 pt
+#' @param base_family base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{[library(fontextra)]} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.
+#' @param base_line_size base size for line elements
+#' @param base_rect_size base size for rect elements
+#' @param facet (optional, default is \code{FALSE}). If \code{TRUE} a rectangle around plotting panel is shown, useful if you use facetting (\code{facet_grid(), facet_wrap()}.
 #' @keywords ggplot2, themes, graphics
+#' @author Jana B. Jarecki
+#' @example \donttest{
+#' see here for more https://github.com/JanaJarecki/themejj/wiki
+#' data(mtcars)
+#' ggplot(mtcars, aes(mpg, wt)) +
+#'   geom_point(size = 2, 
+#'             fill="#83AEB2",
+#'             color="#AEAEB7",
+#'             alpha = .6) +
+#'   geom_smooth(method = lm, alpha = .2, color = "black") +
+#'   labs(title = 'Line Plot', caption = 'Source: mtcars',
+#'       subtitle="Miles Per Gallon and Weight")
+#' # ggsave("../img/lineplot.jpg", w = 100, h = 100, unit = 'mm')
+#'   
+#' data(iris)
+#' ggplot(iris, aes(Sepal.Length, color = Species)) +
+#'   geom_density() +
+#'   scale_color_viridis_d() +
+#'   labs(caption = 'Source: iris',
+#'       subtitle="A subtitle")
+#' data("midwest", package = "ggplot2")
+#' ggplot(midwest, aes(x=area, y=poptotal)) + 
+#'     geom_point(aes(col=state, size=popdensity), alpha = .3) + 
+#'     geom_smooth(method="loess", se=F, color="black") + 
+#'     xlim(c(0, 0.1)) + 
+#'     ylim(c(0, 500000)) + 
+#'     labs(subtitle="Area versus Population", 
+#'          y="Population", 
+#'          x="Area", 
+#'          title="Scatterplot", 
+#'          caption = "Source: midwest") +
+#'     facet_wrap(~state) +
+#'     scale_color_viridis_d() +
+#'     themejj(facet = TRUE)
+#' # see here for more \link[https://github.com/JanaJarecki/themejj/wiki]
+#' }
 #' @export
-#' @examples
-#' themejj()
-
-require(extrafont)
-if(!any(grepl("Roboto", fonts())))
-{
-    font_import(pattern="Roboto")
-    loadfonts(device = 'win')
-}
-require(ggplot2)
-
-themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_size = base_size/30, base_rect_size = base_size/30, facet = FALSE)
-{
-    half_line <- base_size/2
-    base_grey_color <- 'grey60'
-
-    theme(
+themejj <- function(base_size = 10,
+                    base_family = "Roboto Condensed",
+                    base_line_size = base_size/30,
+                    base_rect_size = base_size/30,
+                    facet = FALSE) {
+  half_line <- base_size/2
+  base_grey_color <- 'grey60'
+  theme(
     line =               element_line(
                             color = base_grey_color,
                             size = base_line_size,
@@ -51,7 +79,6 @@ themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_
                             hjust = 0,
                             margin = margin(),
                             debug = FALSE),
-
 
     axis.line =             element_line(),
     axis.line.x =           NULL,
@@ -88,11 +115,10 @@ themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_
                                 angle = -90, 
                                 margin = margin(l = half_line / 2),
                                 vjust = 0, hjust = 0.5),
-
     legend.background =     element_rect(
                                 color = NA,
-                                fill = alpha("white", .9)),
-    legend.spacing =        unit(half_line / 2, 'pt'),
+                                fill = "white"),
+    legend.spacing =        unit(half_line/2, 'pt'),
     legend.spacing.x =      NULL,
     legend.spacing.y =      NULL,
     legend.margin =         margin(),
@@ -109,7 +135,7 @@ themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_
     legend.position =       'top',
     legend.direction =      'horizontal',
     legend.justification =  'center',
-    legend.box =            NULL,
+    legend.box =            'vertical',
     legend.box.margin =     margin(),
     legend.box.spacing =    NULL, #unit(2 * half_line, 'pt'),
     legend.box.background = element_blank(),
@@ -142,7 +168,7 @@ themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_
 
     plot.background =       element_rect(colour = 'white', fill = 'white'),
     plot.title =            element_text( # larger font size
-                                family = 'Roboto', # instead of Roboto Light
+                                family = base_family, # instead of Roboto Light
                                 size = rel(1.2),
                                 hjust = 0,
                                 vjust = 1,
@@ -163,10 +189,8 @@ themejj <- function(base_size = 12, base_family = "Roboto Condensed", base_line_
                                 hjust = 0.5, 
                                 vjust = 0.5),
     plot.tag.position =     "topleft",
-    plot.margin =           margin(half_line, half_line, half_line, half_line),
-   
+    plot.margin =           margin(half_line, half_line, half_line, half_line),   
     aspect.ratio =          NULL, #1/1.618,
 
-    complete =              TRUE
-  )
+    complete =              TRUE)
 }
