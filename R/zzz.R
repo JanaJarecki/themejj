@@ -13,4 +13,6 @@
     extrafont::loadfonts(device = "win")
     windowsFonts()
   }
+  require(extrafont)
+  require(ggplot2)
 }
