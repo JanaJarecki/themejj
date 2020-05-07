@@ -4,14 +4,18 @@
 \alias{themejj}
 \title{A ggplot theme: simple publication-ready theme}
 \usage{
-themejj(base_size = 10, base_family = "Roboto Condensed",
-  base_line_size = base_size/30, base_rect_size = base_size/30,
-  facet = FALSE)
+themejj(
+  base_size = 10,
+  base_family = .default_font,
+  base_line_size = base_size/30,
+  base_rect_size = base_size/30,
+  facet = FALSE
+)
 }
 \arguments{
 \item{base_size}{The base size of the font; defaults to 10 pt}
 
-\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{library(fontextra)} and the font installed \library{font_import(pattern="Roboto")} and \code{loadfonts()}. The apckage wil try to fetch the font.}
+\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{library(fontextra)} and the font installed \code{library{font_import(pattern="Roboto")}} and \code{loadfonts()}. The package wil try to fetch the font.}
 
 \item{base_line_size}{base size for line elements}
 
@@ -56,7 +60,7 @@ ggplot(midwest, aes(x=area, y=poptotal)) +
     facet_wrap(~state) +
     scale_color_viridis_d() +
     themejj(facet = TRUE)
-# see here for more \\link[https://github.com/JanaJarecki/themejj/wiki]
+# see here for more \link[https://github.com/JanaJarecki/themejj/wiki]
 }
 }
 \author{
