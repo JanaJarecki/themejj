@@ -1,14 +1,14 @@
 Package: themejj
 Type: Package
 Title: Custom theme for ggplot2 graphics
-Version: 1.0.3
+Version: 1.0.4
 Date: 2016-07-19
 Author: Jana B. Jarecki
 Maintainer: Jana B. Jarecki <jarecki.jana@gmail.com>
 Description: This theme styles the graphic in a simplistic way, if added to a ggplot with +themejj() or set with theme_set(themejj()).
 Imports:
   ggplot2,
-  extrafont,
-  scales
+  scales,
+  showtext
 License: GNU
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1

@@ -15,7 +15,7 @@ themejj(
 \arguments{
 \item{base_size}{The base size of the font; defaults to 10 pt}
 
-\item{base_family}{base font family; defaults to "Roboto Condensed". Note: you need to have the Roboto font isntalled and the fontextra package loaded \code{library(fontextra)} and the font installed \code{library{font_import(pattern="Roboto")}} and \code{loadfonts()}. The package wil try to fetch the font.}
+\item{base_family}{base font family; defaults to "opensans" loaded via thePshowtext package. Note: you need to have the font isntalled. The package wil try to fetch the font.}
 
 \item{base_line_size}{base size for line elements}
 

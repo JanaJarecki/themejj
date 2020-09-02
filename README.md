@@ -9,8 +9,8 @@ Installation of R and the font "Roboto Condensed", which you get here https://fo
 library(devtools) #maybe install.packages('devtools')
 install_github("janajarecki/themejj", force=TRUE)
 # If this throws errors: You need these two packages
-# install.packages(extrafont)
-# install.packages(ggplot)
+# install.packages(showtext)
+# install.packages(ggplot2)
 ```
 ## How plots look like
 <img src="/img/boxplot.jpg" width="30%" alt="Boxplot"> <img src="/img/lineplot.png" width="30%" alt="Lineplot"> <img src="/img/densityplot.png" width="30%" alt="Densityplot"> <br>

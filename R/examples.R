@@ -9,7 +9,7 @@
 #   geom_smooth(method = lm, alpha = .2, color = "black") +
 #   labs(title = 'Line Plot', caption = 'Source: mtcars',
 #        subtitle="Miles Per Gallon and Weight")
-# ggsave("../img/lineplot.png", w=2, h=2, dpi = 200)
+# # ggsave("../img/lineplot.png", w=2, h=2, dpi = 200)
       
 #     data(iris)
 #     ggplot(iris, aes(Sepal.Length, color = Species)) +
